@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
 
 <LinearLayout
@@ -20,7 +21,7 @@
         android:id="@+id/customer_name_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Add your name here"
+        android:hint="@string/add_name"
         android:inputType="textCapWords"
         android:layout_marginBottom="16dp"
          />
@@ -28,7 +29,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="toppings"
+        android:text="@string/toppings"
         android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceSmall"/>
 
@@ -39,7 +40,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
         android:paddingLeft="24dp"
-        android:text="Whipped Cream"
+        android:text="@string/whipped_cream"
         android:textSize="16sp"/>
 
     <CheckBox
@@ -48,14 +49,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:paddingLeft="24dp"
-        android:text="Chocolate"
+        android:text="@string/chocolate"
         android:textSize="16sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="quantity"
+        android:text="@string/quantity"
         android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceSmall"/>
 
@@ -96,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Order Summary"
+        android:text="@string/order_summary"
         android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceSmall"/>
 
@@ -121,14 +122,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:onClick="submitOrder"
-            android:text="Order" />
+            android:text="@string/order" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:onClick="sendMail"
-            android:text="Send" />
+            android:text="@string/send" />
 
 
     </LinearLayout>

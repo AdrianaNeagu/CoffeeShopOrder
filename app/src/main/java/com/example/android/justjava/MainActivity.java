@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
     public void sendMail(View view) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("*/*");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Java Order for " + name);
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.mail_title) + " " + name);
         intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary());
         if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(Intent.createChooser(intent, "Send Email"));
+            startActivity(Intent.createChooser(intent, getString(R.string.send_mail)));
         }
     }
 
@@ -68,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createOrderSummary() {
-        String priceMessage = "Name: " + name;
-        priceMessage = priceMessage + "\nAdd whipped cream? " + hasWhippedCream;
-        priceMessage = priceMessage + "\nAdd chocolate? " + hasChocolate;
-        priceMessage = priceMessage + "\nQuantity: " + quantity;
-        priceMessage = priceMessage + "\nTotal: $" + price;
-        priceMessage = priceMessage + "\nThank You!";
+        String priceMessage = getString(R.string.name) + " " + name;
+        priceMessage = priceMessage + "\n" + getString(R.string.add_whipped_cream) + " " + hasWhippedCream;
+        priceMessage = priceMessage + "\n" + getString(R.string.add_chocolate) + " " + hasChocolate;
+        priceMessage = priceMessage + "\n" + getString(R.string.quantity) + ": " + quantity;
+        priceMessage = priceMessage + "\n" + getString(R.string.total) + ": $" + price;
+        priceMessage = priceMessage + "\n" + getString((R.string.thank_you));
         return priceMessage;
     }
 
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         if(quantity <= 100) {
             quantity = quantity + 1;
             displayQuantity(quantity);
-        } else Toast.makeText(MainActivity.this, "Too many coffees",
+        } else Toast.makeText(MainActivity.this, getString(R.string.too_many_coffees),
                 Toast.LENGTH_LONG).show();
     }
 
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         if (quantity >= 1) {
             quantity = quantity - 1;
             displayQuantity(quantity);
-        } else Toast.makeText(MainActivity.this, "No negative coffees allowed",
+        } else Toast.makeText(MainActivity.this, getString(R.string.no_negative_coffees),
                 Toast.LENGTH_LONG).show();
     }
 
